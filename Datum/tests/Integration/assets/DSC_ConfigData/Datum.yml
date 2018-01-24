@@ -19,6 +19,15 @@ DatumStructure:
     StoreOptions:
       Path: "./Roles"
 
+AggregatedVariables:
+  ConfigurationData:
+    AllNodes:
+      ItemsPath: Datum:\AllNodes\#{Environment}\#{hostname}
+      Aggregation: AsArray #AsObject or AsHashtable
+      AddPathElementToItem: True
+      ResolveAllTheThings: true
+    # Datum:
+    #   ItemsPath: Datum:\
 
 ResolutionPrecedence:
   - 'AllNodes\$($Node.Environment)\$($Node.Name)'
